@@ -5,6 +5,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 9000",
+    "upkeep": "pnpm dlx sequelize-cli db:migrate && pnpm i",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
@@ -16,15 +17,18 @@
     "vitest": "vitest run",
     "vitest:watch": "vitest",
     "test": "npm run typecheck && npm run lint && npm run vitest && npm run build",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "BROWSER=none storybook dev -h 0.0.0.0 -p 6006",
     "storybook:build": "storybook build"
   },
   "dependencies": {
     "@mantine/core": "8.3.7",
     "@mantine/hooks": "8.3.7",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.4"
+    "react-router-dom": "^7.9.4",
+    "sequelize": "^6.37.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",
