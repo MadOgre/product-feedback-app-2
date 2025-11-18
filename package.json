@@ -5,7 +5,6 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 9000",
-    "upkeep": "pnpm dlx sequelize-cli db:migrate && pnpm i",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
@@ -27,8 +26,7 @@
     "pg-hstore": "^2.3.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.4",
-    "sequelize": "^6.37.7"
+    "react-router-dom": "^7.9.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",
