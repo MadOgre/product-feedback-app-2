@@ -15,7 +15,12 @@ export default defineConfig({
       failOnError: false,     // set true if you want HMR to stop on errors
       emitError: true,
     })
-  ], 
+  ],
+  server: {
+    proxy: {
+      '/api': 'http://localhost:9001',
+    },
+  },
   test: {
     globals: true,
     environment: "jsdom",
@@ -27,4 +32,3 @@ export default defineConfig({
     },
   },
 });
-
