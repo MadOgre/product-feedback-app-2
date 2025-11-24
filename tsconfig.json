@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "types": ["node", "@testing-library/jest-dom", "vitest/globals"],
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -16,10 +17,19 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "@/*": ["./src/*"],
       "@test-utils": ["./test-utils"]
     }
   },
-  "include": ["src", "test-utils", ".storybook/main.ts", ".storybook/preview.tsx"]
+  "watchOptions": {
+    "excludeDirectories": ["**/node_modules", "**/dist", "**/temp"]
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": ["*.ts", "database", "server", "src", "test-utils", ".storybook/main.ts", ".storybook/preview.tsx"]
 }

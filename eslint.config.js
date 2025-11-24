@@ -12,11 +12,12 @@ export default defineConfig(
     plugins: {
       "@stylistic": stylistic,
     },
-    files: ["src/**/*"],
+    files: ["src/**/*", "server/**/*", "*.ts"],
     rules: {
       "no-console": "off",
       "@stylistic/quotes": ["error", "double", { "avoidEscape": true }],
-      "@stylistic/comma-dangle": ["error", "always-multiline"]
+      "@stylistic/comma-dangle": ["error", "always-multiline"],
+      "@stylistic/semi": ["error", "always"],
     },
   },
   {
