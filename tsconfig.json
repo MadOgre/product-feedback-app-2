@@ -16,10 +16,16 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "@/*": ["./src/*"],
       "@test-utils": ["./test-utils"]
     }
   },
-  "include": ["server", "src", "test-utils", ".storybook/main.ts", ".storybook/preview.tsx"]
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": ["*.ts", "database", "server", "src", "test-utils", ".storybook/main.ts", ".storybook/preview.tsx"]
 }

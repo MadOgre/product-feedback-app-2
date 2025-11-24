@@ -20,11 +20,14 @@
     "vitest:watch": "vitest",
     "test": "npm run typecheck && npm run lint && npm run vitest && npm run build",
     "storybook": "BROWSER=none storybook dev -h 0.0.0.0 -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "mikro-orm": "node --import tsx ./node_modules/@mikro-orm/cli/cli"
   },
   "dependencies": {
     "@mantine/core": "8.3.7",
     "@mantine/hooks": "8.3.7",
+    "@mikro-orm/core": "^6.6.0",
+    "@mikro-orm/postgresql": "^6.6.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.4"
@@ -32,6 +35,11 @@
   "devDependencies": {
     "@eslint/js": "^9.37.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@mikro-orm/cli": "^6.6.0",
+    "@mikro-orm/entity-generator": "^6.6.0",
+    "@mikro-orm/migrations": "^6.6.0",
+    "@mikro-orm/reflection": "^6.6.0",
+    "@mikro-orm/seeder": "^6.6.0",
     "@storybook/addon-themes": "^10.0.0",
     "@storybook/react": "^10.0.0",
     "@storybook/react-vite": "^10.0.0",
@@ -59,6 +67,8 @@
     "storybook": "^10.0.0",
     "stylelint": "^16.25.0",
     "stylelint-config-standard-scss": "^16.0.0",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.0",
