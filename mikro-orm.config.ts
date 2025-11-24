@@ -12,4 +12,8 @@ export default defineConfig({
   migrations: {
     path: "./database/migrations",
   },
+  seeder: {
+    path: "./database/seeders",
+    defaultSeeder: "DatabaseSeeder",
+  },
 });
