@@ -7,7 +7,7 @@
     "dev": "concurrently -n api,web,types \"pnpm dev:api\" \"pnpm dev:web\" \"pnpm dev:types\"",
     "dev:api": "tsx watch server/server.ts",
     "dev:web": "vite --host 0.0.0.0 --port 9000",
-    "dev:types": "tsc --noEmit --watch",
+    "dev:types": "tsc --noEmit --watch --preserveWatchOutput",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
@@ -21,7 +21,8 @@
     "test": "npm run typecheck && npm run lint && npm run vitest && npm run build",
     "storybook": "BROWSER=none storybook dev -h 0.0.0.0 -p 6006",
     "storybook:build": "storybook build",
-    "mikro-orm": "node --import tsx ./node_modules/@mikro-orm/cli/cli"
+    "mikro-orm": "node --import tsx ./node_modules/@mikro-orm/cli/cli",
+    "db": "node --import tsx ./node_modules/@mikro-orm/cli/cli"
   },
   "dependencies": {
     "@mantine/core": "8.3.7",
